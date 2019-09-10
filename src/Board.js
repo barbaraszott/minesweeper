@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Cell from './Cell';
 
 class Board extends Component {
 	render() {

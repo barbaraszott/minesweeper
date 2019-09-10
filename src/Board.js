@@ -26,6 +26,26 @@ class Board extends Component {
 
 	// get random number from 0 to maxNumber (exclusive)
 	getRandomNumber = (maxNumber) => Math.floor(Math.random() * maxNumber);
+
+	plantMines = () => {
+		const { width, height, mines } = this.props;
+		const boardWithMines = this.createEmptyBoard();
+
+		let minesPlanted = 0;
+
+		while (minesPlanted < mines) {
+			const randomX = this.getRandomNumber(width);
+			const randomY = this.getRandomNumber(height);
+
+			if (!boardWithMines[randomX][randomY].hasMine) {
+				boardWithMines[randomX][randomY].hasMine = true;
+				minesPlanted++;
+			}
+		}
+
+		return boardWithMines;
+	};
+
 	render() {
 		return (
 			<div>

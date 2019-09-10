@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Cell from './Cell';
 
 class Board extends Component {
+	createEmptyBoard = () => {
+		const { height, width } = this.props;
 		const emptyBoard = [];
 		for (let x = 0; x < width; x++) {
 			emptyBoard.push([]);

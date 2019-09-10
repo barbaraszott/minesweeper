@@ -13,7 +13,7 @@ class Game extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="game">
 				<h1>Hi!</h1>
 			</div>
 		);

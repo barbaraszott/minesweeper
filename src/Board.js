@@ -24,6 +24,8 @@ class Board extends Component {
 		return emptyBoard;
 	};
 
+	// get random number from 0 to maxNumber (exclusive)
+	getRandomNumber = (maxNumber) => Math.floor(Math.random() * maxNumber);
 	render() {
 		return (
 			<div>

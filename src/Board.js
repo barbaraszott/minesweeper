@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Cell from './Cell';
 
 class Board extends Component {
-	createEmptyBoard = (height, width) => {
 		const emptyBoard = [];
 		for (let x = 0; x < width; x++) {
 			emptyBoard.push([]);
@@ -11,7 +10,7 @@ class Board extends Component {
 				emptyBoard[x][y] = {
 					x,
 					y,
-					isMine     : false,
+					hasMine    : false,
 					neighbour  : 0,
 					isRevealed : false,
 					isEmpty    : false,

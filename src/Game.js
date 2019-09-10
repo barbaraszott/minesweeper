@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Game.scss';
+import Board from './Board';
 
 class Game extends Component {
 	constructor(props) {
@@ -12,9 +13,10 @@ class Game extends Component {
 	}
 
 	render() {
+		const { height, width, mines } = this.state;
 		return (
 			<div className="game">
-				<h1>Hi!</h1>
+				<Board height={height} width={width} mines={mines} />
 			</div>
 		);
 	}

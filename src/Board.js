@@ -141,9 +141,15 @@ class Board extends Component {
 	};
 
 	render() {
+		const board = this.state.board;
+
 		return (
-			<div>
-				<h1>Board</h1>
+			<div className="board">
+				{board.map((row) => (
+					<div className="board-row">
+						{row.map((cell) => <Cell onClick={() => console.log('click!')} data={cell} />)}
+					</div>
+				))}
 			</div>
 		);
 	}

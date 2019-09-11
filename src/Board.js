@@ -103,6 +103,9 @@ class Board extends Component {
 
 	countNearbyMines = (board) => {
 		const { width, height } = this.props;
+		const updatedBoard = [
+			...board
+		];
 
 		for (let i = 0; i < height; i++) {
 			for (let j = 0; j < width; j++) {
@@ -124,7 +127,9 @@ class Board extends Component {
 			}
 		}
 
-		return board;
+		return updatedBoard;
+	};
+
 	};
 
 	render() {

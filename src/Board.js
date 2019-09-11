@@ -92,6 +92,32 @@ class Board extends Component {
 		return neighbours;
 	};
 
+	countNearbyMines = (board) => {
+		const { width, height } = this.props;
+
+		for (let i = 0; i < height; i++) {
+			for (let j = 0; j < width; j++) {
+				const cell = board[i][j];
+				if (!cell.hasMine) {
+					let nearbyMines = 0;
+					const neighbourhood = this.findNeighbouringCells(cell.x, cell.y, board);
+
+					neighbourhood.forEach((cell) => {
+						if (cell.hasMine) nearbyMines++;
+					});
+
+					if (nearbyMines === 0) {
+						cell.isEmpty = true;
+					}
+
+					cell.nearbyMines = nearbyMines;
+				}
+			}
+		}
+
+		return board;
+	};
+
 	render() {
 		return (
 			<div>

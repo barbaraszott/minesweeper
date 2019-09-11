@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import Cell from './Cell';
 
 class Board extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			board : []
+		};
+	}
+
 	createEmptyBoard = () => {
 		const { height, width } = this.props;
 		const emptyBoard = [];

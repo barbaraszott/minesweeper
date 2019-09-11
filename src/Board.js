@@ -12,11 +12,11 @@ class Board extends Component {
 				emptyBoard[x][y] = {
 					x,
 					y,
-					hasMine    : false,
-					neighbour  : 0,
-					isRevealed : false,
-					isEmpty    : false,
-					isFlagged  : false
+					hasMine     : false,
+					nearbyMines : 0,
+					isRevealed  : false,
+					isEmpty     : false,
+					isFlagged   : false
 				};
 			}
 		}

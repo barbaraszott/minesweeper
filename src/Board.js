@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Cell from './Cell';
+import './Game.scss';
 
 class Board extends Component {
 	constructor(props) {

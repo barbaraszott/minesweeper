@@ -3,10 +3,20 @@ import PropTypes from 'prop-types';
 import './Game.scss';
 
 class Cell extends Component {
+	getValue = () => {
+		const cell = this.props.data;
+
+		if (cell.hasMine) return 'B';
+
+		if (cell.nearbyMines === 0) return null;
+
+		return cell.nearbyMines;
+	};
+
 	render() {
 		return (
-			<div>
-				<h1>Cell...</h1>
+			<div className="cell" onClick={this.props.onClick}>
+				{this.getValue()}
 			</div>
 		);
 	}

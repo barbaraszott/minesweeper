@@ -6,9 +6,9 @@ class Board extends Component {
 	createEmptyBoard = () => {
 		const { height, width } = this.props;
 		const emptyBoard = [];
-		for (let x = 0; x < width; x++) {
+		for (let x = 0; x < height; x++) {
 			emptyBoard.push([]);
-			for (let y = 0; y < height; y++) {
+			for (let y = 0; y < width; y++) {
 				emptyBoard[x][y] = {
 					x,
 					y,
@@ -34,8 +34,8 @@ class Board extends Component {
 		let minesPlanted = 0;
 
 		while (minesPlanted < mines) {
-			const randomX = this.getRandomNumber(width);
-			const randomY = this.getRandomNumber(height);
+			const randomX = this.getRandomNumber(height);
+			const randomY = this.getRandomNumber(width);
 
 			if (!boardWithMines[randomX][randomY].hasMine) {
 				boardWithMines[randomX][randomY].hasMine = true;

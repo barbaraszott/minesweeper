@@ -46,6 +46,52 @@ class Board extends Component {
 		return boardWithMines;
 	};
 
+	findNeighbouringCells = (x, y, board) => {
+		const neighbours = [];
+
+		// top
+		if (x > 0) {
+			neighbours.push(board[x - 1][y]);
+		}
+
+		// bottom
+		if (x < this.props.height - 1) {
+			neighbours.push(board[x + 1][y]);
+		}
+
+		// left
+		if (y > 0) {
+			neighbours.push(board[x][y - 1]);
+		}
+
+		// right
+		if (y < this.props.width - 1) {
+			neighbours.push(board[x][y + 1]);
+		}
+
+		// top-left
+		if (x > 0 && y > 0) {
+			neighbours.push(board[x - 1][y - 1]);
+		}
+
+		// top-right
+		if (x > 0 && y < this.props.width - 1) {
+			neighbours.push(board[x - 1][y + 1]);
+		}
+
+		// bottom-right
+		if (x < this.props.height - 1 && y < this.props.width - 1) {
+			neighbours.push(board[x + 1][y + 1]);
+		}
+
+		// bottom-left
+		if (x < this.props.height - 1 && y > 0) {
+			neighbours.push(board[x + 1][y - 1]);
+		}
+
+		return neighbours;
+	};
+
 	render() {
 		return (
 			<div>

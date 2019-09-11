@@ -14,9 +14,9 @@ class Board extends Component {
 	createEmptyBoard = () => {
 		const { height, width } = this.props;
 		const emptyBoard = [];
-		for (let x = 0; x < height; x++) {
+		for (let x = 0; x < width; x++) {
 			emptyBoard.push([]);
-			for (let y = 0; y < width; y++) {
+			for (let y = 0; y < height; y++) {
 				emptyBoard[x][y] = {
 					x,
 					y,
@@ -141,14 +141,20 @@ class Board extends Component {
 		});
 	};
 
+	handleClick = (x, y) => {
+		console.log(x, y);
+	};
+
 	render() {
 		const board = this.state.board;
 
 		return (
 			<div className="board">
-				{board.map((row) => (
-					<div className="board-row">
-						{row.map((cell) => <Cell onClick={() => console.log('click!')} data={cell} />)}
+				{board.map((row, rowIndex) => (
+					<div className="board-row" key={rowIndex}>
+						{row.map((cell) => (
+							<Cell onClick={() => this.handleClick(cell.x, cell.y)} data={cell} key={cell.x * row.length + cell.y} />
+						))}
 					</div>
 				))}
 			</div>

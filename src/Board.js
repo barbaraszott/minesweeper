@@ -34,9 +34,11 @@ class Board extends Component {
 	// get random number from 0 to maxNumber (exclusive)
 	getRandomNumber = (maxNumber) => Math.floor(Math.random() * maxNumber);
 
-	plantMines = () => {
+	plantMines = (emptyBoard) => {
 		const { width, height, mines } = this.props;
-		const boardWithMines = this.createEmptyBoard();
+		const boardWithMines = [
+			...emptyBoard
+		];
 
 		let minesPlanted = 0;
 

@@ -130,6 +130,14 @@ class Board extends Component {
 		return updatedBoard;
 	};
 
+	componentDidMount = () => {
+		const emptyBoard = this.createEmptyBoard();
+		const boardWithMines = this.plantMines(emptyBoard);
+		const fullBoard = this.countNearbyMines(boardWithMines);
+
+		this.setState({
+			board : fullBoard
+		});
 	};
 
 	render() {

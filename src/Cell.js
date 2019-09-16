@@ -6,6 +6,8 @@ class Cell extends Component {
 	getValue = () => {
 		const cell = this.props.data;
 
+		if (!cell.isRevealed) return cell.isFlagged ? 'F' : null;
+
 		if (cell.hasMine) return 'B';
 
 		if (cell.nearbyMines === 0) return null;

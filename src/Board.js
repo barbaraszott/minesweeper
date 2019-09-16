@@ -37,11 +37,8 @@ class Board extends Component {
 	// get random number from 0 to maxNumber (exclusive)
 	getRandomNumber = (maxNumber) => Math.floor(Math.random() * maxNumber);
 
-	plantMines = (emptyBoard) => {
+	plantMines = (board) => {
 		const { width, height, mines } = this.props;
-		const boardWithMines = [
-			...emptyBoard
-		];
 
 		let minesPlanted = 0;
 
@@ -49,13 +46,11 @@ class Board extends Component {
 			const randomX = this.getRandomNumber(height);
 			const randomY = this.getRandomNumber(width);
 
-			if (!boardWithMines[randomX][randomY].hasMine) {
-				boardWithMines[randomX][randomY].hasMine = true;
+			if (!board[randomX][randomY].hasMine) {
+				board[randomX][randomY].hasMine = true;
 				minesPlanted++;
 			}
 		}
-
-		return boardWithMines;
 	};
 
 	findNeighbouringCells = (x, y, board) => {

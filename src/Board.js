@@ -168,7 +168,42 @@ class Board extends Component {
 	};
 
 	handleClick = (x, y) => {
-		console.log(x, y);
+		const board = [
+			...this.state.board
+		];
+		const cell = board[x][y];
+		console.log(cell);
+
+		// If cell is already revealed or flagged by user - do nothing
+		if (cell.isRevealed || cell.isFlagged) return;
+
+		// If user clicked a cell with mine - game over
+		if (cell.hasMine) {
+			this.setState({
+				isGameFinished : true
+			});
+			console.log('game over :(');
+			this.revealBoard();
+		}
+
+		board[x][y].isRevealed = true;
+
+		if (cell.isEmpty) {
+			this.revealEmpty(x, y, board);
+		}
+
+		if (this.getHidden(board) === this.props.mines) {
+			this.setState({
+				isGameFinished : true,
+				didUserWin     : true
+			});
+			console.log('You won! :)');
+			this.revealBoard();
+		}
+
+		this.setState({
+			board
+		});
 	};
 
 	render() {

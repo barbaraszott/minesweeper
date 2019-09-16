@@ -153,6 +153,17 @@ class Board extends Component {
 
 		return hidden;
 	};
+
+	revealEmpty = (x, y, board) => {
+		const area = this.findNeighbouringCells(x, y, board);
+
+		area.forEach((cell) => {
+			if (!cell.isFlagged && !cell.isRevealed && (cell.isEmpty || !cell.hasMine)) {
+				board[cell.x][cell.y].isRevealed = true;
+				if (cell.isEmpty) {
+					this.revealEmpty(cell.x, cell.y, board);
+				}
+			}
 		});
 	};
 

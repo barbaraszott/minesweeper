@@ -134,6 +134,16 @@ class Board extends Component {
 		});
 	};
 
+	revealBoard = () => {
+		const board = [
+			...this.state.board
+		].map((row) => row.map((cell) => (cell.isRevealed = true)));
+
+		this.setState({
+			board
+		});
+	};
+
 		});
 	};
 

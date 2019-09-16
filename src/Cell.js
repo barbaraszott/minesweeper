@@ -16,8 +16,9 @@ class Cell extends Component {
 	};
 
 	render() {
+		const cell = this.props.data;
 		return (
-			<div className="cell" onClick={this.props.onClick}>
+			<div className="cell" onClick={this.props.onClick} style={cell.isRevealed ? { backgroundColor: 'red' } : {}}>
 				{this.getValue()}
 			</div>
 		);

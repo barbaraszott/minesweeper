@@ -144,6 +144,15 @@ class Board extends Component {
 		});
 	};
 
+	getHidden = (board) => {
+		let hidden = 0;
+
+		board.forEach((row) => {
+			hidden += row.filter((cell) => cell.isRevealed === false).length;
+		});
+
+		return hidden;
+	};
 		});
 	};
 

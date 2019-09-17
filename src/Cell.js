@@ -25,6 +25,9 @@ class Cell extends Component {
 	}
 }
 
-Cell.propTypes = {};
+Cell.propTypes = {
+	onClick : PropTypes.func,
+	data    : PropTypes.object
+};
 
 export default Cell;

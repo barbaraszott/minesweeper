@@ -220,13 +220,12 @@ class Board extends Component {
 
 		if (cell.isRevealed) return;
 
-		if (this.state.clickAction === 'reveal') {
-			this.revealCell(x, y);
-		}
+		const clickHandlers = {
+			reveal : this.revealCell,
+			flag   : this.flagCell
+		};
 
-		if (this.state.clickAction === 'flag') {
-			this.flagCell(x, y);
-		}
+		clickHandlers[this.state.clickAction](x, y);
 
 		this.setState({
 			board

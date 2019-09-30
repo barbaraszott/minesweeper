@@ -215,6 +215,16 @@ class Board extends Component {
 		const board = this.state.board;
 		board[x][y].isFlagged = !board[x][y].isFlagged;
 	}
+
+	finishGame(didUserWin = false) {
+		this.revealBoard();
+
+		this.setState({
+			didUserWin,
+			isGameFinished : true
+		});
+	}
+
 		}
 
 		if (this.state.clickAction === 'flag') {

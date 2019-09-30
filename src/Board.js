@@ -176,41 +176,28 @@ class Board extends Component {
 		});
 	};
 
-	handleClick = (x, y) => {
-		const board = [
-			...this.state.board
-		];
+	revealCell(x, y) {
+		// If cell is already revealed or flagged by user - do nothing
+		const board = this.state.board;
 		const cell = board[x][y];
 
-		if (cell.isRevealed) return;
+		if (cell.isFlagged) return;
 
-		if (this.state.clickAction === 'reveal') {
-			// If cell is already revealed or flagged by user - do nothing
-			if (cell.isFlagged) return;
+		if (cell.hasMine) {
+			this.finishGame();
+		}
 
-			// If user clicked a cell with mine - game over
-			if (cell.hasMine) {
-				this.setState({
-					isGameFinished : true
-				});
-				console.log('game over :(');
-				this.revealBoard();
-			}
+		cell.isRevealed = true;
 
-			board[x][y].isRevealed = true;
+		if (cell.isEmpty) {
+			this.revealEmpty(x, y, board);
+		}
 
-			if (cell.isEmpty) {
-				this.revealEmpty(x, y, board);
-			}
+		if (this.getHidden(board) === this.props.mines) {
+			this.finishGame(true);
+		}
+	}
 
-			if (this.getHidden(board) === this.props.mines) {
-				this.setState({
-					isGameFinished : true,
-					didUserWin     : true
-				});
-				console.log('You won! :)');
-				this.revealBoard();
-			}
 	flagCell(x, y) {
 		const board = this.state.board;
 		board[x][y].isFlagged = !board[x][y].isFlagged;
@@ -225,10 +212,18 @@ class Board extends Component {
 		});
 	}
 
+	handleClick = (x, y) => {
+		const board = this.state.board;
+		const cell = board[x][y];
+
+		if (cell.isRevealed) return;
+
+		if (this.state.clickAction === 'reveal') {
+			this.revealCell(x, y);
 		}
 
 		if (this.state.clickAction === 'flag') {
-			cell.isFlagged = !cell.isFlagged;
+			this.flagCell(x, y);
 		}
 
 		this.setState({

@@ -211,6 +211,10 @@ class Board extends Component {
 				console.log('You won! :)');
 				this.revealBoard();
 			}
+	flagCell(x, y) {
+		const board = this.state.board;
+		board[x][y].isFlagged = !board[x][y].isFlagged;
+	}
 		}
 
 		if (this.state.clickAction === 'flag') {

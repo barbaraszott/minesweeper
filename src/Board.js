@@ -203,6 +203,9 @@ class Board extends Component {
 	};
 
 	finishGame(didUserWin = false) {
+		const msg = didUserWin ? 'You won! :)' : 'You looooose :(';
+		console.log(msg);
+
 		this.revealBoard();
 
 		this.setState({

@@ -9,7 +9,8 @@ class Board extends Component {
 		this.state = {
 			board          : [],
 			isGameFinished : false,
-			didUserWin     : false
+			didUserWin     : false,
+			clickAction    : 'reveal'
 		};
 	}
 

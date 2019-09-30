@@ -168,6 +168,14 @@ class Board extends Component {
 		});
 	};
 
+	toggleClickAction = (e) => {
+		const clickAction = this.state.clickAction === 'reveal' ? 'flag' : 'reveal';
+
+		this.setState({
+			clickAction
+		});
+	};
+
 	handleClick = (x, y) => {
 		const board = [
 			...this.state.board

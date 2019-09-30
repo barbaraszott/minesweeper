@@ -181,11 +181,12 @@ class Board extends Component {
 			...this.state.board
 		];
 		const cell = board[x][y];
-		console.log(cell);
+
+		if (cell.isRevealed) return;
 
 		if (this.state.clickAction === 'reveal') {
 			// If cell is already revealed or flagged by user - do nothing
-			if (cell.isRevealed || cell.isFlagged) return;
+			if (cell.isFlagged) return;
 
 			// If user clicked a cell with mine - game over
 			if (cell.hasMine) {
@@ -213,7 +214,6 @@ class Board extends Component {
 		}
 
 		if (this.state.clickAction === 'flag') {
-			if (cell.isRevealed) return;
 			cell.isFlagged = !cell.isFlagged;
 		}
 

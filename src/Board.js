@@ -197,10 +197,10 @@ class Board extends Component {
 		}
 	};
 
-	flagCell(x, y) {
+	flagCell = (x, y) => {
 		const board = this.state.board;
 		board[x][y].isFlagged = !board[x][y].isFlagged;
-	}
+	};
 
 	finishGame(didUserWin = false) {
 		this.revealBoard();

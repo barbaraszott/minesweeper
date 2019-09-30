@@ -211,15 +211,26 @@ class Board extends Component {
 		const board = this.state.board;
 
 		return (
-			<div className="board">
-				{board.map((row, rowIndex) => (
-					<div className="board-row" key={rowIndex}>
-						{row.map((cell) => (
-							<Cell onClick={() => this.handleClick(cell.x, cell.y)} data={cell} key={cell.x * row.length + cell.y} />
-						))}
-					</div>
-				))}
-			</div>
+			<React.Fragment>
+				<div className="header">
+					<h1>Hi</h1>
+					<input type="checkbox" id="clickAction" onClick={this.toggleClickAction} />
+					<label htmlFor="clickAction">Flag</label>
+				</div>
+				<div className="board">
+					{board.map((row, rowIndex) => (
+						<div className="board-row" key={rowIndex}>
+							{row.map((cell) => (
+								<Cell
+									onClick={(e) => this.handleClick(cell.x, cell.y)}
+									data={cell}
+									key={cell.x * row.length + cell.y}
+								/>
+							))}
+						</div>
+					))}
+				</div>
+			</React.Fragment>
 		);
 	}
 }

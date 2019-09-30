@@ -183,31 +183,38 @@ class Board extends Component {
 		const cell = board[x][y];
 		console.log(cell);
 
-		// If cell is already revealed or flagged by user - do nothing
-		if (cell.isRevealed || cell.isFlagged) return;
+		if (this.state.clickAction === 'reveal') {
+			// If cell is already revealed or flagged by user - do nothing
+			if (cell.isRevealed || cell.isFlagged) return;
 
-		// If user clicked a cell with mine - game over
-		if (cell.hasMine) {
-			this.setState({
-				isGameFinished : true
-			});
-			console.log('game over :(');
-			this.revealBoard();
+			// If user clicked a cell with mine - game over
+			if (cell.hasMine) {
+				this.setState({
+					isGameFinished : true
+				});
+				console.log('game over :(');
+				this.revealBoard();
+			}
+
+			board[x][y].isRevealed = true;
+
+			if (cell.isEmpty) {
+				this.revealEmpty(x, y, board);
+			}
+
+			if (this.getHidden(board) === this.props.mines) {
+				this.setState({
+					isGameFinished : true,
+					didUserWin     : true
+				});
+				console.log('You won! :)');
+				this.revealBoard();
+			}
 		}
 
-		board[x][y].isRevealed = true;
-
-		if (cell.isEmpty) {
-			this.revealEmpty(x, y, board);
-		}
-
-		if (this.getHidden(board) === this.props.mines) {
-			this.setState({
-				isGameFinished : true,
-				didUserWin     : true
-			});
-			console.log('You won! :)');
-			this.revealBoard();
+		if (this.state.clickAction === 'flag') {
+			if (cell.isRevealed) return;
+			cell.isFlagged = !cell.isFlagged;
 		}
 
 		this.setState({
@@ -221,6 +228,7 @@ class Board extends Component {
 		return (
 			<React.Fragment>
 				<div className="header">
+					{/* <Header isGameFinished={this.state.isGameFinished} diduserWin={this.state.didUserWin} /> */}
 					<h1>Hi</h1>
 					<input type="checkbox" id="clickAction" onClick={this.toggleClickAction} />
 					<label htmlFor="clickAction">Flag</label>

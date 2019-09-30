@@ -176,8 +176,7 @@ class Board extends Component {
 		});
 	};
 
-	revealCell(x, y) {
-		// If cell is already revealed or flagged by user - do nothing
+	revealCell = (x, y) => {
 		const board = this.state.board;
 		const cell = board[x][y];
 
@@ -196,7 +195,7 @@ class Board extends Component {
 		if (this.getHidden(board) === this.props.mines) {
 			this.finishGame(true);
 		}
-	}
+	};
 
 	flagCell(x, y) {
 		const board = this.state.board;

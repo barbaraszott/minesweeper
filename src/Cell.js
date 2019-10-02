@@ -60,8 +60,9 @@ class Cell extends Component {
 }
 
 Cell.propTypes = {
-	onClick : PropTypes.func,
-	data    : PropTypes.object
+	onClick        : PropTypes.func,
+	data           : PropTypes.object,
+	isGameFinished : PropTypes.bool
 };
 
 export default Cell;

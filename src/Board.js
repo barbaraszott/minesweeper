@@ -251,6 +251,7 @@ class Board extends Component {
 									onClick={(e) => this.handleClick(cell.x, cell.y)}
 									data={cell}
 									key={cell.x * row.length + cell.y}
+									isGameFinished={this.state.isGameFinished}
 								/>
 							))}
 						</div>

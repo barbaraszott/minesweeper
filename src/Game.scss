@@ -35,7 +35,8 @@ body {
 
 	&_mine {
 		@extend .cell;
-		background-color: #ed303f;
+		background-color: #db106d;
+		box-shadow: inset 0 -4px #fd3399;
 	}
 
 	&_1-nearby {

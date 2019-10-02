@@ -3,16 +3,8 @@ import PropTypes from 'prop-types';
 import './Game.scss';
 
 class Cell extends Component {
-	getValue = () => {
-		const cell = this.props.data;
-
-		if (!cell.isRevealed) return cell.isFlagged ? 'F' : null;
-
-		if (cell.hasMine) return 'B';
-
-		if (cell.nearbyMines === 0) return null;
-
-		return cell.nearbyMines;
+	showNearbyMinesCount = (cell) => {
+		return cell.isRevealed && cell.nearbyMines !== 0 ? cell.nearbyMines : null;
 	};
 
 	createClassNames = (cell, isGameFinished) => {
@@ -53,7 +45,7 @@ class Cell extends Component {
 
 		return (
 			<div className={classNames} onClick={this.props.onClick}>
-				{this.getValue()}
+				{this.showNearbyMinesCount(cell)}
 			</div>
 		);
 	}

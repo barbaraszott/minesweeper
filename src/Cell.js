@@ -15,6 +15,38 @@ class Cell extends Component {
 		return cell.nearbyMines;
 	};
 
+	createClassNames = (cell, isGameFinished) => {
+		if (isGameFinished) {
+			cell.isFlagged = false;
+			cell.isRevealed = true;
+		}
+
+		if (cell.isFlagged) {
+			return 'cell_flagged';
+		}
+
+		if (cell.isRevealed) {
+			if (cell.isEmpty) {
+				return 'cell_empty';
+			} else if (cell.hasMine) {
+				return 'cell_mine';
+			} else {
+				switch (cell.nearbyMines) {
+					case 1:
+						return 'cell_1-nearby';
+					case 2:
+						return 'cell_2-nearby';
+					case 3:
+						return 'cell_3-nearby';
+					default:
+						return 'cell_many-nearby';
+				}
+			}
+		}
+
+		return 'cell';
+	};
+
 	render() {
 		const cell = this.props.data;
 		return (

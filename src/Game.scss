@@ -172,6 +172,7 @@ body {
 	align-items: center;
 	border-radius: 5px;
 	background-color: #ccddee;
+	font-size: 35px;
 
 	&_flagged {
 		@extend .cell;

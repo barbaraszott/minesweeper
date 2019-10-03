@@ -217,6 +217,30 @@ body {
 		@extend .cell;
 		background-color: #db106d;
 		box-shadow: inset 0 -4px #fd3399;
+		position: relative;
+
+		&::before {
+			content: '';
+			width: 60%;
+			height: 60%;
+			display: block;
+			background-color: #481e54;
+			border-radius: 50%;
+			position: absolute;
+		}
+
+		&::after {
+			content: '';
+			width: 23px;
+			height: 21px;
+			display: block;
+			border-bottom-color: #ccddee;
+			position: absolute;
+			border-bottom-width: 3px;
+			border-bottom-style: solid;
+			border-radius: 50%;
+			transform: rotate(-50deg);
+		}
 	}
 
 	&_1-nearby {

@@ -10,7 +10,8 @@ class Board extends Component {
 			board          : [],
 			isGameFinished : false,
 			didUserWin     : false,
-			clickAction    : 'reveal'
+			clickAction    : 'reveal',
+			flagsLeft      : props.mines
 		};
 	}
 

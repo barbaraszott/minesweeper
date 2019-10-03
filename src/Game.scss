@@ -53,6 +53,29 @@ body {
 	}
 }
 
+.sapper-eyes_loose {
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		border-width: 0 4px;
+		border-color: #445576;
+		border-style: solid;
+		height: 11px;
+		width: 16px;
+		top: 22%;
+		left: 25%;
+	}
+
+	&::before {
+		transform: skewX(-45deg);
+	}
+
+	&::after {
+		transform: skewX(45deg);
+	}
+}
 }
 
 .board-row {

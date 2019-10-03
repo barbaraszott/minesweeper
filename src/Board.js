@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Cell from './Cell';
+import SapperIcon from './SapperIcon';
 import './Game.scss';
 
 class Board extends Component {
@@ -245,15 +246,21 @@ class Board extends Component {
 	};
 
 	render() {
-		const board = this.state.board;
+		const { board, isGameFinished, didUserWin } = this.state;
 
 		return (
 			<React.Fragment>
 				<div className="header">
-					{/* <Header isGameFinished={this.state.isGameFinished} diduserWin={this.state.didUserWin} /> */}
-					<h1>Hi</h1>
-					<input type="checkbox" id="clickAction" onClick={this.toggleClickAction} />
-					<label htmlFor="clickAction">Flag</label>
+					<div className="flag-toggle">
+						<input type="checkbox" id="clickAction" onClick={this.toggleClickAction} className="flag-toggle_checkbox" />
+						<label htmlFor="clickAction" className="flag-toggle_icon">
+							Flag
+						</label>
+					</div>
+
+					<SapperIcon isGameFinished={isGameFinished} didUserWin={didUserWin} />
+
+					<div className="flag-left-count">Flags left: {this.state.flagsLeft}</div>
 				</div>
 				<div className="board">
 					{board.map((row, rowIndex) => (

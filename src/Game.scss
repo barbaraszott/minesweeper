@@ -136,6 +136,27 @@ body {
 	}
 }
 
+.sapper-mouth_win {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	background-color: #445576;
+	width: 30px;
+	height: 13px;
+	border-radius: 0 0 30px 30px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		background-color: #fe66ba;
+		width: 50%;
+		height: 50%;
+		border-radius: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .board-row {

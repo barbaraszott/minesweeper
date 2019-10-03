@@ -30,6 +30,29 @@ body {
 		background-color: #ce0a64;
 	}
 }
+
+.sapper-eyes {
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		background-color: #445576;
+		width: 7px;
+		height: 15px;
+		border-radius: 50%;
+		top: 25%;
+	}
+
+	&::before {
+		left: 30%;
+	}
+
+	&::after {
+		right: 30%;
+	}
+}
+
 }
 
 .board-row {

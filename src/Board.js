@@ -260,7 +260,7 @@ class Board extends Component {
 
 					<SapperIcon isGameFinished={isGameFinished} didUserWin={didUserWin} />
 
-					<div className="flag-left-count">Flags left: {this.state.flagsLeft}</div>
+					<div className="flag-counter">{this.state.flagsLeft}</div>
 				</div>
 				<div className="board">
 					{board.map((row, rowIndex) => (

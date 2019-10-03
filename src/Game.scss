@@ -159,6 +159,40 @@ body {
 	}
 }
 
+.flag-counter {
+	position: relative;
+	font-size: 30px;
+	width: 30px;
+	text-align: right;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+	}
+
+	&::before {
+		width: 5px;
+		height: 35px;
+		border-radius: 2px;
+		background-color: #fb4499;
+		top: 50%;
+		right: -10px;
+		transform: translateY(-50%);
+	}
+
+	&::after {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 10px 0px 10px 18px;
+		border-color: transparent transparent transparent #fb4499;
+		left: 36px;
+		top: 0px;
+	}
+}
+
 .board-row {
 	display: flex;
 }

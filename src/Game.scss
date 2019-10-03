@@ -9,6 +9,13 @@ body {
 	background-color: #ddeeee;
 	font-family: 'Rajdhani', sans-serif;
 }
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 15px;
+}
 }
 
 .board-row {

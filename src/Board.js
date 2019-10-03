@@ -200,7 +200,18 @@ class Board extends Component {
 
 	flagCell = (x, y) => {
 		const board = this.state.board;
+		const flagsLeft = this.state.flagsLeft;
+
+		if (!flagsLeft && !board[x][y].isFlagged) {
+			alert('no more flags left...');
+			return;
+		}
+
 		board[x][y].isFlagged = !board[x][y].isFlagged;
+
+		this.setState({
+			flagsLeft : board[x][y].isFlagged ? flagsLeft - 1 : flagsLeft + 1
+		});
 	};
 
 	finishGame(didUserWin = false) {

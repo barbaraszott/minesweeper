@@ -105,4 +105,18 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, 50%);
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		background-color: $tongue-pink;
+		border-radius: 50%;
+		bottom: -1px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
 }

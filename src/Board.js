@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Cell from './Cell';
 import SapperIcon from './SapperIcon';
-import './Game.scss';
+import FlagToggle from './FlagToggle';
+import './Board.scss';
+import FlagCounter from './FlagCounter';
 
 class Board extends Component {
 	constructor(props) {
@@ -246,21 +248,14 @@ class Board extends Component {
 	};
 
 	render() {
-		const { board, isGameFinished, didUserWin } = this.state;
+		const { board, isGameFinished, didUserWin, clickAction } = this.state;
 
 		return (
 			<React.Fragment>
 				<div className="header">
-					<div className="flag-toggle">
-						<input type="checkbox" id="clickAction" onClick={this.toggleClickAction} className="flag-toggle_checkbox" />
-						<label htmlFor="clickAction" className="flag-toggle_icon">
-							Flag
-						</label>
-					</div>
-
+					<FlagToggle onClick={this.toggleClickAction} isOn={clickAction === 'flag'} />
 					<SapperIcon isGameFinished={isGameFinished} didUserWin={didUserWin} />
-
-					<div className="flag-counter">{this.state.flagsLeft}</div>
+					<FlagCounter flagsLeft={this.state.flagsLeft} />
 				</div>
 				<div className="board">
 					{board.map((row, rowIndex) => (

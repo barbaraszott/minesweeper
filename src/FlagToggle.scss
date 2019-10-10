@@ -1,0 +1,10 @@
+@import './utilities.scss';
+
+.flag-toggle-container {
+	position: relative;
+	width: 100px;
+	height: 50px;
+	border-radius: 50px;
+	background-color: $light-grey;
+	cursor: pointer;
+}

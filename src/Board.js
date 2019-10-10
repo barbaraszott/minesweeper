@@ -247,6 +247,20 @@ class Board extends Component {
 		});
 	};
 
+	createNewGame = () => {
+		const board = this.createEmptyBoard();
+
+		this.plantMines(board);
+		this.countNearbyMines(board);
+
+		this.setState({
+			board,
+			isGameFinished : false,
+			didUserWin     : false,
+			clickAction    : 'reveal',
+			flagsLeft      : this.props.mines
+		});
+	};
 	render() {
 		const { board, isGameFinished, didUserWin, clickAction } = this.state;
 

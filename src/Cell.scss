@@ -63,4 +63,19 @@
 		transform: rotate(-50deg);
 	}
 }
+
+.cell_1-nearby {
+	@include cell-revealed(#22ccee, #0095db, #88dded);
+}
+
+.cell_2-nearby {
+	@include cell-revealed(#ffdd43, #ff9f48, #ffff66);
+}
+
+.cell_3-nearby {
+	@include cell-revealed(#fb4499, #db106d, #ffb0dc);
+}
+
+.cell_many-nearby {
+	@include cell-revealed(#445576, #32334b, #ccddee);
 }

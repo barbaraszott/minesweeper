@@ -96,6 +96,7 @@
 	left: 50%;
 	transform: translateX(-50%);
 }
+
 .sapper-mouth_win {
 	position: relative;
 	width: 30px;
@@ -118,5 +119,14 @@
 		transform: translateX(-50%);
 	}
 }
+
+.sapper-mouth_loose {
+	position: relative;
+	height: 3px;
+	width: 70%;
+	background-color: #445576;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 75%);
 
 }

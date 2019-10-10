@@ -86,3 +86,13 @@
 	}
 }
 
+.sapper-mouth {
+	position: absolute;
+	width: 60%;
+	height: 50%;
+	border-bottom: 3px solid $dark-grey;
+	border-radius: 50%;
+	bottom: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+}

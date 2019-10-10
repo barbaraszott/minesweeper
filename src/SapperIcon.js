@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Game.scss';
+import './SapperIcon.scss';
 
 class SapperIcon extends Component {
 	render() {

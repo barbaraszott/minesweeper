@@ -10,6 +10,12 @@
 	background-color: #ccddee;
 	border-radius: 5px;
 	font-size: 35px;
+	cursor: pointer;
+
+	&:hover::after {
+		content: '?';
+		color: #869baf;
+	}
 }
 
 @mixin cell-revealed($backgroundColor : #fff, $shadowColor : #cde, $color : null) {
@@ -17,6 +23,11 @@
 	background-color: $backgroundColor;
 	box-shadow: inset 0 -4px $shadowColor;
 	color: $color;
+	cursor: default;
+
+	&:hover::after {
+		content: '';
+	}
 }
 
 .cell_flagged {

@@ -129,4 +129,16 @@
 	left: 50%;
 	transform: translate(-50%, 75%);
 
+	&::after {
+		content: '';
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		display: block;
+		background-color: #fe66ba;
+		border-radius: 0 0 50% 50%;
+		top: 3px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }

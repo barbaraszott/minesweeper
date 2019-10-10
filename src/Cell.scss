@@ -12,3 +12,9 @@
 	font-size: 35px;
 }
 
+@mixin cell-revealed($backgroundColor : #fff, $shadowColor : #cde, $color : null) {
+	@extend .cell;
+	background-color: $backgroundColor;
+	box-shadow: inset 0 -4px $shadowColor;
+	color: $color;
+}

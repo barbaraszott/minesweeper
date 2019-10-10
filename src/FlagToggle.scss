@@ -8,3 +8,12 @@
 	background-color: $light-grey;
 	cursor: pointer;
 }
+.flag-toggle {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background-color: #8a8685;
+	border-radius: 50%;
+	transition: 0.3s ease-out;
+
+}

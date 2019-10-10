@@ -13,6 +13,9 @@ class Reset extends Component {
 	}
 }
 
-Reset.propTypes = {};
+Reset.propTypes = {
+	didUserWin : PropTypes.bool,
+	onClick    : PropTypes.func
+};
 
 export default Reset;

@@ -8,6 +8,7 @@
 	background-color: $light-grey;
 	cursor: pointer;
 }
+
 .flag-toggle {
 	position: relative;
 	width: 50px;
@@ -15,5 +16,14 @@
 	background-color: #8a8685;
 	border-radius: 50%;
 	transition: 0.3s ease-out;
+
+	&::before {
+		content: url('./pink-flag.svg');
+		position: absolute;
+		left: calc(50% + 2px);
+		top: calc(50% + 2px);
+		transform: translate(-50%, -50%);
+		filter: brightness(50%) grayscale(100%);
+	}
 
 }

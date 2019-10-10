@@ -26,4 +26,12 @@
 		filter: brightness(50%) grayscale(100%);
 	}
 
+	&.isOn {
+		background-color: #fff;
+		transform: translateX(50px);
+
+		&::before {
+			filter: none;
+		}
+	}
 }

@@ -8,3 +8,9 @@
 	background-color: $face-yellow;
 	border-radius: 50%;
 }
+
+.sapper-face_loose {
+	@extend .sapper-face;
+	background-color: $face-red;
+}
+

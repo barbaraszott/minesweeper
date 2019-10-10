@@ -1,0 +1,12 @@
+@import './utilities.scss';
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 15px;
+}
+
+.board-row {
+	display: flex;
+}

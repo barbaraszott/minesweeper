@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Game.scss';
+import './Cell.scss';
 
 class Cell extends Component {
 	createClassNames = (cell, isGameFinished) => {

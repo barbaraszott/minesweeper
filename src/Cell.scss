@@ -1,0 +1,14 @@
+@import './utilities.scss';
+
+.cell {
+	width: 50px;
+	height: 50px;
+	margin: 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ccddee;
+	border-radius: 5px;
+	font-size: 35px;
+}
+

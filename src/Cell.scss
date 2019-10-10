@@ -36,3 +36,7 @@
 	@include cell-revealed();
 }
 
+.cell_mine {
+	@include cell-revealed(#db106d, #fd3399);
+	position: relative;
+}

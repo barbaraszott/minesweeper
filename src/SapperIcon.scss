@@ -14,3 +14,14 @@
 	background-color: $face-red;
 }
 
+.sapper-eyes,
+.sapper-eyes_win,
+.sapper-eyes_loose {
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+	}
+}
+

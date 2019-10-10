@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Cell from './Cell';
 import SapperIcon from './SapperIcon';
 import FlagToggle from './FlagToggle';
-import './Board.scss';
 import FlagCounter from './FlagCounter';
+import Reset from './Reset';
+import './Board.scss';
 
 class Board extends Component {
 	constructor(props) {
@@ -261,7 +262,12 @@ class Board extends Component {
 		return (
 			<React.Fragment>
 				<div className="header">
-					<FlagToggle onClick={this.toggleClickAction} isOn={clickAction === 'flag'} />
+					{this.state.isGameFinished ? (
+						<Reset onClick={this.createNewGame} didUserWin={this.state.didUserWin} />
+					) : (
+						<FlagToggle onClick={this.toggleClickAction} isOn={clickAction === 'flag'} />
+					)}
+
 					<SapperIcon isGameFinished={isGameFinished} didUserWin={didUserWin} />
 					<FlagCounter flagsLeft={this.state.flagsLeft} />
 				</div>

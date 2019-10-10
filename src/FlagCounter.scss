@@ -1,0 +1,18 @@
+.flag-counter {
+	position: relative;
+	font-size: 30px;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 50px;
+	background-color: #ccddee;
+	color: #fff;
+
+	&::after {
+		content: url('./pink-flag.svg');
+		position: absolute;
+		right: 7px;
+		top: 5px;
+	}
+}

@@ -25,3 +25,22 @@
 	}
 }
 
+.sapper-eyes {
+	&::before,
+	&::after {
+		width: 7px;
+		height: 15px;
+		background-color: $dark-grey;
+		border-radius: 50%;
+		top: 25%;
+	}
+
+	&::before {
+		left: 30%;
+	}
+
+	&::after {
+		right: 30%;
+	}
+}
+

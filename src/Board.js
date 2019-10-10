@@ -128,17 +128,6 @@ class Board extends Component {
 		}
 	};
 
-	componentDidMount = () => {
-		const board = this.createEmptyBoard();
-
-		this.plantMines(board);
-		this.countNearbyMines(board);
-
-		this.setState({
-			board
-		});
-	};
-
 	revealBoard = () => {
 		const board = [
 			...this.state.board
@@ -261,6 +250,11 @@ class Board extends Component {
 			flagsLeft      : this.props.mines
 		});
 	};
+
+	componentDidMount = () => {
+		this.createNewGame();
+	};
+
 	render() {
 		const { board, isGameFinished, didUserWin, clickAction } = this.state;
 

@@ -39,4 +39,14 @@
 .cell_mine {
 	@include cell-revealed(#db106d, #fd3399);
 	position: relative;
+
+	&::before {
+		content: '';
+		width: 60%;
+		height: 60%;
+		display: block;
+		background-color: #481e54;
+		border-radius: 50%;
+		position: absolute;
+	}
 }

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './Cell.scss';
 
-class Cell extends Component {
+class Cell extends PureComponent {
 	createClassNames = () => {
 		const { hasMine, nearbyMines, isRevealed, isEmpty, isFlagged } = this.props;
 

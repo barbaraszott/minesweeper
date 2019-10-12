@@ -7,7 +7,7 @@ Live version: https://barbaraszott.github.io/minesweeper/
 ## Table of contents
 
 - [Introduction](#introduction)
-- [Minesweeper](#minesweeper)
+- [About](#about)
 - [Technologies](#technologies)
 - [Project status](#project-status)
 
@@ -16,7 +16,7 @@ Live version: https://barbaraszott.github.io/minesweeper/
 Game made for fun and for React practice.
 Inspiration for design: [Sweet Minesweeper](https://dribbble.com/shots/6343456-Sweet-Minesweeper) by [Inkbyte Studios](https://dribbble.com/InkbyteStudios)
 
-## Minesweeper
+## About
 
 I'm sure You know what this game is about! Goal is to clear board containing hidden bombs (mines) without detonating any of them, with help from clues about the number of neighbouring bombs in each field.
 

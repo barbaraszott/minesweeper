@@ -277,7 +277,13 @@ class Board extends Component {
 							{row.map((cell) => (
 								<Cell
 									onClick={this.handleClick}
-									data={cell}
+									x={cell.x}
+									y={cell.y}
+									hasMine={cell.hasMine}
+									nearbyMines={cell.nearbyMines}
+									isRevealed={cell.isRevealed}
+									isEmpty={cell.isEmpty}
+									isFlagged={cell.isFlagged}
 									key={cell.x * row.length + cell.y}
 									isGameFinished={this.state.isGameFinished}
 								/>

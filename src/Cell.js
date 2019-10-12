@@ -3,23 +3,20 @@ import PropTypes from 'prop-types';
 import './Cell.scss';
 
 class Cell extends Component {
-	createClassNames = (cell, isGameFinished) => {
-		if (isGameFinished) {
-			cell.isFlagged = false;
-			cell.isRevealed = true;
-		}
+	createClassNames = () => {
+		const { hasMine, nearbyMines, isRevealed, isEmpty, isFlagged } = this.props;
 
-		if (cell.isFlagged) {
+		if (isFlagged) {
 			return 'cell_flagged';
 		}
 
-		if (cell.isRevealed) {
-			if (cell.isEmpty) {
+		if (isRevealed) {
+			if (isEmpty) {
 				return 'cell_empty';
-			} else if (cell.hasMine) {
+			} else if (hasMine) {
 				return 'cell_mine';
 			} else {
-				switch (cell.nearbyMines) {
+				switch (nearbyMines) {
 					case 1:
 						return 'cell_1-nearby';
 					case 2:
@@ -36,12 +33,13 @@ class Cell extends Component {
 	};
 
 	render() {
-		const cell = this.props.data;
-		const classNames = this.createClassNames(cell, this.props.isGameFinished);
+		const { x, y, nearbyMines, isRevealed } = this.props;
+
+		const classNames = this.createClassNames();
 
 		return (
-			<div className={classNames} onClick={() => this.props.onClick(cell.x, cell.y)}>
-				{cell.isRevealed && cell.nearbyMines ? cell.nearbyMines : null}
+			<div className={classNames} onClick={() => this.props.onClick(x, y)}>
+				{isRevealed && nearbyMines ? nearbyMines : null}
 			</div>
 		);
 	}
@@ -49,8 +47,14 @@ class Cell extends Component {
 
 Cell.propTypes = {
 	onClick        : PropTypes.func,
-	data           : PropTypes.object,
-	isGameFinished : PropTypes.bool
+	isGameFinished : PropTypes.bool,
+	x              : PropTypes.number,
+	y              : PropTypes.number,
+	hasMine        : PropTypes.bool,
+	nearbyMines    : PropTypes.number,
+	isRevealed     : PropTypes.bool,
+	isEmpty        : PropTypes.bool,
+	isFlagged      : PropTypes.bool
 };
 
 export default Cell;

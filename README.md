@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Minesweeper
 
-## Available Scripts
+Popular single-player puzzle computer game.
 
-In the project directory, you can run:
+Live version: https://barbaraszott.github.io/minesweeper/
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Introduction](#introduction)
+- [Minesweeper](#minesweeper)
+- [Technologies](#technologies)
+- [Project status](#project-status)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Introduction
 
-### `npm test`
+Game made for fun and for React practice.
+Inspiration for design: [Sweet Minesweeper](https://dribbble.com/shots/6343456-Sweet-Minesweeper) by [Inkbyte Studios](https://dribbble.com/InkbyteStudios)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Minesweeper
 
-### `npm run build`
+I'm sure You know what this game is about! Goal is to clear board containing hidden bombs (mines) without detonating any of them, with help from clues about the number of neighbouring bombs in each field.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How to play
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+If a square containing a mine is revealed, the player loses the game.
+If no mine is revealed, a digit is instead displayed in the square, indicating how many adjacent squares contain mines.
+If no mines are adjacent, the square becomes blank, and all adjacent squares will be recursively revealed.
+With those informations user have to deduce where the mines are and clear every other field - player can flag those cells (change click action with toggle - left corner above the board).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+- JavaScript (ES6)
+- React.js
+- SCSS as a CSS preprocessor
+- BEM methodology
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project status
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In progress:
+- Better UX for mobile phones
+- When there are no more flags left and user wants to use it - shake animation on FlagCounter (instead of showing alert)
+- [ReactTour](https://reactour.js.org) - when player plays for the very first time
+- Choosing level (easy, medium, hard) before start
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

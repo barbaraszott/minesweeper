@@ -276,7 +276,7 @@ class Board extends Component {
 						<div className="board-row" key={rowIndex}>
 							{row.map((cell) => (
 								<Cell
-									onClick={(e) => this.handleClick(cell.x, cell.y)}
+									onClick={this.handleClick}
 									data={cell}
 									key={cell.x * row.length + cell.y}
 									isGameFinished={this.state.isGameFinished}

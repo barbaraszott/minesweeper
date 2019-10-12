@@ -40,7 +40,7 @@ class Cell extends Component {
 		const classNames = this.createClassNames(cell, this.props.isGameFinished);
 
 		return (
-			<div className={classNames} onClick={this.props.onClick}>
+			<div className={classNames} onClick={() => this.props.onClick(cell.x, cell.y)}>
 				{cell.isRevealed && cell.nearbyMines ? cell.nearbyMines : null}
 			</div>
 		);

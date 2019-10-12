@@ -3,3 +3,11 @@ $light-grey: #ccddee;
 $face-yellow: #ffdd43;
 $face-red: #ce0a64;
 $tongue-pink: #fe66ba;
+
+$desktop-width: 1024px;
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}

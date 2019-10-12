@@ -38,7 +38,7 @@ class Cell extends PureComponent {
 		const classNames = this.createClassNames();
 
 		return (
-			<div className={classNames} onClick={() => this.props.onClick(x, y)}>
+			<div className={classNames} onMouseDown={() => this.props.onClick(x, y)}>
 				{isRevealed && nearbyMines ? nearbyMines : null}
 			</div>
 		);

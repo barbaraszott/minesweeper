@@ -11,10 +11,13 @@
 	border-radius: 5px;
 	font-size: 35px;
 	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
 
-	&:hover::after {
-		content: '?';
-		color: #869baf;
+	@include desktop {
+		&:hover::after {
+			content: '?';
+			color: #869baf;
+		}
 	}
 }
 
